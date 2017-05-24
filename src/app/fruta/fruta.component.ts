@@ -28,7 +28,7 @@ export class FrutaComponent{
   }
 
   holaMundo(nombre){
-    alert('Hola ' + nombre );
+    console.log('Hola ' + nombre );
   }
 
 }

@@ -8,12 +8,11 @@
 
 
 <pre [style.border]= "color_seleccionado == 'red' ? '5px solid black' : '5px solid green'"
-    
-      [ngClass]="{
+     [ngClass]="{
          fondoAzul: color_seleccionado == 'blue',
          fondoVerde: color_seleccionado == 'green',
          letraGrande: 1 == 1
-      }"   >
+      }">
     <strong>Color Elegido: </strong>{{color_seleccionado}}</pre>
 
 <div [ngStyle]="{background:color_seleccionado, color:'white', 'width': '180px', 'height':'180px', 'float':'right', 'margin-right': '45%'}">
@@ -55,7 +54,7 @@
     </ul>
 </div>
 <hr>
-<h3>Listado de empleados</h3>
+<h3 [ngClass]="['fondoAzul', 'letraGrande']">Listado de empleados</h3>
 <ul>
     <li *ngFor="let empleado of trabajadores; let i = index"><strong>Empleado {{i+1}}:</strong>
         <ul>

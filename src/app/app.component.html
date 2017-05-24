@@ -2,7 +2,21 @@
  {{title}}
 </h1>
 <hr>
+
+<nav>
+<a [routerLink]="['/home']"[routerLinkActive]="['activado']">Home</a>-
+<a [routerLink]="['/fruta']"[routerLinkActive]="['activado']">frutas</a>-
+<a [routerLink]="['/empleado']"[routerLinkActive]="['activado']">empleado</a>-
+<a [routerLink]="['/contacto']"[routerLinkActive]="['activado']">contacto</a>
+
+</nav>
+
+
+
 <!--<fruta></fruta>-->
-<empleado></empleado>
+<!--<empleado></empleado>-->
+<router-outlet> </router-outlet>
+
+
 
 
