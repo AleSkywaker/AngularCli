@@ -14,6 +14,7 @@ const appRoutes: Routes = [
     {path: 'fruta', component: FrutaComponent},
     {path: 'home', component: HomeComponent},
     {path: 'contacto', component: ContactoComponent},
+    {path: 'contacto/:nombre', component: ContactoComponent},
     {path: '**', component: HomeComponent}, //si falla
 ];
 

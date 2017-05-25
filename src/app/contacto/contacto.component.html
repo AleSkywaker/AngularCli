@@ -1,1 +1,11 @@
 <h1>{{titulo}}</h1>
+
+
+<div *ngIf="parametro">
+Este es el parametro de la url: <h3>{{parametro}}</h3>
+</div>
+<div *ngIf="!parametro">
+<button (click)="redirigir()">Ir la página con parametro </button>
+</div>
+<br>
+<button (click)="redirigirFrutas()">Ir a frutas</button>
