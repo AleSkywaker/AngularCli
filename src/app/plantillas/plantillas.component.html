@@ -1,0 +1,28 @@
+<h3>{{titulo}}</h3>
+
+
+
+
+<div *ngIf='administrador; then admin else noAdmin'>
+   
+</div>
+<!--<div *ngIf='administrador; else noAdmin'>
+    <button (click)='cambiar(false)'>Cambiar a usuario normal</button>
+    <strong style='background:yellow'>Eres el administrador de la WebApp</strong>
+</div>-->
+<!--<div *ngIf='!administrador'>
+    <button (click)='cambiar(true)'>Cambiar a usuario administrador</button>
+   <strong style='background:red; color:white'>Eres el administrador de la WebApp</strong>
+</div>-->
+
+
+<ng-template #admin>
+   <button (click)='cambiar(false)'>Cambiar a usuario normal</button>
+    <strong style='background:yellow'>Eres el administrador de la WebApp</strong>
+</ng-template>
+
+
+<ng-template #noAdmin>
+    <button (click)='cambiar(true)'>Cambiar a usuario administrador</button>
+ <strong style='background:red; color:white'>Eres el administrador de la WebApp</strong>
+</ng-template>
