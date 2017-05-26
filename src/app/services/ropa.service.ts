@@ -21,8 +21,13 @@ export class RopaService{
 
     return this.getRopa();
    }
-   getRopa(){
+   getRopa():Array<string>{
        return this.coleccion_ropa;
+   }
+
+   deleteRopa(index:number){
+     this.coleccion_ropa.splice(index, 1);
+     return this.getRopa();
    }
 
 }

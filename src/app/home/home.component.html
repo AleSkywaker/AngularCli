@@ -1,6 +1,15 @@
 <h1>{{titulo}}</h1>
 
 <br>
+
+{{fecha | date: 'dd/MM/yyyy'}}
+<br>
+{{fecha | date: 'fullDate'  | uppercase}}
+<br>
+{{nombre | uppercase}}
+<br>
+{{88 | conversor:5}}
+
 <hr>
 <input type="text" [(ngModel)]="prenda_a_guardar">
 <button (click)="guardarPrenda()">Añadir prenda</button>
@@ -8,5 +17,7 @@
 
 <h3>Listado de Prendas</h3>
 <ul>
-    <li *ngFor="let ropa of listado_ropa">{{ropa}}</li>
+    <li *ngFor="let ropa of listado_ropa; let i = index">{{ropa}}
+        <button (click)="eliminarPrenda(i)">Eliminar</button>
+    </li>
 </ul>
