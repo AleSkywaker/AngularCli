@@ -12,14 +12,35 @@ import {Coche} from './coche'
 export class CochesComponent {
 
     public title:string = 'Componente Coches'
-
     public coche: Coche;
+    public coches:Array<Coche>;
+
+
 
     constructor(){
-        this.coche = new Coche("", null, "");
+        this.coche = new Coche("", "", "");
+        this.coches = [
+
+          new Coche("Renault", "clio", "Rojo"),
+          new Coche("Mercedez", "Clase A", "Azul")
+
+        ]
 
 
     }
+    onSubmit(){
+
+        this.coches.push(this.coche);
+    console.log(this.coche);
+
+        this.coche = new Coche("", "", "");
+    
+
+    }
+    eliminarCoche(index:number){
+     this.coches.splice(index, 1);
+     
+   }
 
 
 

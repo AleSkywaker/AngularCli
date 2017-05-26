@@ -11,7 +11,7 @@ export class Coche{
   }*/
   constructor(
       public nombre:string,
-      public caballos:number,
+      public modelo:string,
       public color: string,
       
   ){}

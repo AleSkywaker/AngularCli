@@ -1,1 +1,52 @@
 <h1>{{title}}</h1>
+
+<style>
+
+form{
+background:#ffff80;  text-align:center; border: solid 2px black; padding: 1%; width:300px
+}
+div{
+background:olive; float:left; text-align:center; border: solid 2px black; padding: 1%; margin-right: 2%;
+}
+
+
+
+
+
+</style>
+
+
+<div>
+<form #formCoches="ngForm" (ngSubmit)='onSubmit(); formCoches.reset()'>
+    <p>
+        <label>Nombre:</label>
+        <input type="text" name='nombre' #nombre='ngModel' [(ngModel)]="coche.nombre" required>
+        <br>  
+        <strong><span *ngIf='nombre.touched && !nombre.valid'>Nombre de coche incorrecto</span></strong>
+    </p>
+    <p>
+        <label>Modelo:</label>
+        <input type="text" name='modelo' #modelo='ngModel' [(ngModel)]="coche.modelo" required pattern="[0-9a-zA-Z#]+">
+        <br> 
+        <strong><span *ngIf='modelo.touched && !modelo.valid'>Modelo de coche incorrecto</span></strong>
+    </p>
+    <p>
+        <label>Color:</label>
+        <input type="text" name='color' #color='ngModel' [(ngModel)]="coche.color" required pattern="[a-zA-Z#]+">
+        <br>  
+        <strong><span *ngIf='color.touched && !color.valid'>Color de coche incorrecto</span></strong>
+    </p>
+    <p>
+        <input type="submit" value="Guardar" [disabled]="!formCoches.form.valid">
+    </p>
+
+</form>
+</div>
+<div>
+    <h3>Coches</h3>
+    <ul>
+        <li *ngFor="let coche of coches; let i = index">
+            Marca: <strong>{{coche.nombre}}</strong> Modelo: <strong>{{coche.modelo}}</strong> color: <strong>{{coche.color}}</strong>
+            <button (click)="eliminarCoche(i)">X</button></li>
+    </ul>
+</div>
